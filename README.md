@@ -22,7 +22,7 @@ Swap dilakukan setiap 1 menit secara terus-menerus hingga saldo MON tidak mencuk
 ### Clone repo ini
 
 ```bash
-git clone https://github.com/namamu/monda_swap_bot.git
+git clone https://github.com/acheronyor/monda_swap_bot.git
 cd monda_swap_bot
 ```
 
