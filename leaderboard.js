@@ -3,11 +3,11 @@ const fetch = require("node-fetch");
 
 async function tampilkanLeaderboardLengkap(address) {
   try {
-    const resUser = await fetch(`https://app.monda.fund/api/get-user?address=${address}`);
+    const resUser = await fetch(`https://app.purps.xyz/api/get-user?address=${address}`);
     if (!resUser.ok) throw new Error(`HTTP error user! status: ${resUser.status}`);
     const userData = await resUser.json();
 
-    const resDaily = await fetch(`https://app.monda.fund/api/get-user-daily-stats?address=${address}`);
+    const resDaily = await fetch(`https://app.purps.xyz/api/get-user-daily-stats?address=${address}`);
     if (!resDaily.ok) throw new Error(`HTTP error daily! status: ${resDaily.status}`);
     const dailyData = await resDaily.json();
     return {

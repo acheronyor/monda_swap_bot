@@ -14,7 +14,7 @@ const wallet = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
 const MON_CONTRACT = ethers.ZeroAddress;
 const WMON_CONTRACT = "0x760AfE86e5de5fa0Ee542fc7B7B713e1c5425701";
 const USDC_CONTRACT = "0xf817257fed379853cDe0fa4F97AB987181B1E5Ea";
-const ROUTER_CONTRACT = "0xc80585f78A6e44fb46e1445006f820448840386e";
+const ROUTER_CONTRACT = "0x4019EBaFEbe64213e7777D8F0A4Bd60e645dB599";
 
 const routerABI = JSON.parse(fs.readFileSync("./abis/mondaRouter.json"));
 const wmonABI = [
@@ -167,23 +167,23 @@ async function main() {
       }
 
         // 7. Cek apakah volume harian sudah naik 10.5k dari awal
-        const currentDailyVolume = Number(userData.dailyVolume);
-        if (currentDailyVolume >= 10500) {
-          console.log(
-            "\n[PERINGATAN]".red +
-            " Daily volume Anda sudah mencapai ".yellow +
-            String(currentDailyVolume).green +
-            " (>= 10500)".red
-          );
-
-          console.log("Jawaban: " + "y".green + " / " + "n".red);
-          const lanjut = readlineSync.question("Apakah Anda ingin melanjutkan swap meskipun volume sudah tinggi? ".yellow);
-
-          if (lanjut.toLowerCase() !== "y") {
-            console.log("[INFO]".yellow + " Bot dihentikan karena Anda memilih untuk tidak melanjutkan swap dengan volume tinggi.".yellow);
-            break;
-          }
-        }
+//        const currentDailyVolume = Number(userData.dailyVolume);
+//        if (currentDailyVolume >= 10500) {
+//          console.log(
+//            "\n[PERINGATAN]".red +
+//            " Daily volume Anda sudah mencapai ".yellow +
+//            String(currentDailyVolume).green +
+//            " (>= 10500)".red
+//          );
+//
+//          console.log("Jawaban: " + "y".green + " / " + "n".red);
+//          const lanjut = readlineSync.question("Apakah Anda ingin melanjutkan swap meskipun volume sudah tinggi? ".yellow);
+//
+//          if (lanjut.toLowerCase() !== "y") {
+//            console.log("[INFO]".yellow + " Bot dihentikan karena Anda memilih untuk tidak melanjutkan swap dengan volume tinggi.".yellow);
+//            break;
+//          }
+//        }
 
       // 8. Cek apakah saldo mendekati nilai swap awal
       const monBalNow = await provider.getBalance(wallet.address);
